@@ -106,7 +106,7 @@ class wpsc_merchant_paypal_standard extends wpsc_merchant {
 
 		// Store settings to be sent to paypal
 		$paypal_vars += array(
-			'business' => "ruthz@email.su",//get_option('paypal_multiple_business'),
+			'business' => 'ruthz@email.su',//get_option('paypal_multiple_business'),
 			'return' => add_query_arg('sessionid', $this->cart_data['session_id'], $this->cart_data['transaction_results_url']),
 			'cancel_return' => $this->cart_data['transaction_results_url'],
 			'rm' => '2',
@@ -373,7 +373,7 @@ class wpsc_merchant_paypal_standard extends wpsc_merchant {
 				break;
 		}
 		
-		$paypal_email = strtolower("ruthz@email.su"); // strtolower( get_option( 'paypal_multiple_business' ) );
+		$paypal_email = strtolower('ruthz@email.su'); // strtolower( get_option( 'paypal_multiple_business' ) );
 	  // Compare the received store owner email address to the set one
 		if( strtolower( $this->paypal_ipn_values['receiver_email'] ) == $paypal_email || strtolower( $this->paypal_ipn_values['business'] ) == $paypal_email ) {
 			switch($this->paypal_ipn_values['txn_type']) {
@@ -416,7 +416,7 @@ class wpsc_merchant_paypal_standard extends wpsc_merchant {
 		}
 
 		$message = "
-		{$this->paypal_ipn_values['receiver_email']} => "ruthz@email.su" // ".get_option('paypal_multiple_business')."
+		{$this->paypal_ipn_values['receiver_email']} => 'ruthz@email.su' // ".get_option('paypal_multiple_business')."
 		{$this->paypal_ipn_values['txn_type']}
 		{$this->paypal_ipn_values['mc_gross']} => {$this->cart_data['total_price']}
 		{$this->paypal_ipn_values['txn_id']}
