@@ -77,7 +77,7 @@ class wpsc_merchant_paypal_pro extends wpsc_merchant {
 		$data['VERSION']          = "52.0";
 		$data['METHOD']           = "DoDirectPayment";
 		$data['PAYMENTACTION']    = "Sale";
-		$data['RETURNFMFDETAILS'] = "1"; // optional - return fraud management filter data
+		$data['RETURNFMFDETAILS'] = "0"; // optional - return fraud management filter data
 		$data['CURRENCYCODE'] = $this->get_paypal_currency_code();
 
 		// Basic Cart Data
